@@ -12,8 +12,13 @@ export const items: MenuItem[] = [
     },
     {
         label: "Editor",
-        icon: "pi pi-fw pi-table",
+        icon: "pi pi-fw pi-th-large",
         url: "editor",
+    },
+    {
+        label: "Table",
+        icon: "pi pi-fw pi-table",
+        url: "table",
     },
     {
         label: 'Settings', icon: 'pi pi-fw pi-cog',
