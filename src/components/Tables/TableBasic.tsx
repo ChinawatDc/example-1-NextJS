@@ -4,29 +4,27 @@ import { Column } from 'primereact/column';
 import { columns } from '@/src/data/table/column.mockup';
 import { Button } from 'primereact/button';
 import { Dropdown } from 'primereact/dropdown';
+import { generateMockData } from '@/src/services/api/mockup.serviecs';
+
 export default function TableBasic() {
     const [first, setFirst] = useState(0);
     const [rows, setRows] = useState(5);
-    const options = [];
+    const [data, setData] = useState<any[]>([]);
+    const [totalRecords, setTotalRecords] = useState(0);
 
-    for (let i = 1; i <= 100; i++) {
-        options.push({
-            id: i.toString().padStart(4, '0'),
-            code: `code${i}`,
-            name: `Product ${i}`,
-            description: 'Product Description',
-            image: `product${i}.jpg`,
-            price: Math.floor(Math.random() * 100) + 1, // สุ่มราคาตั้งแต่ 1 ถึง 100
-            category: 'Accessories',
-            quantity: Math.floor(Math.random() * 50) + 1, // สุ่มจำนวนตั้งแต่ 1 ถึง 50
-            inventoryStatus: i % 2 === 0 ? 'INSTOCK' : 'OUTOFSTOCK', // สถานะสต็อก
-            rating: Math.floor(Math.random() * 5) + 1 // สุ่มเรตติ้งตั้งแต่ 1 ถึง 5
-        });
-    }
+    useEffect(() => {
+        const page = Math.floor(first / rows);
+        const size = rows;
+        const newData = generateMockData(page, size);
+        setData(newData);
+        setTotalRecords(100);
+    }, [first, rows]);
+
     const onCustomPage = (event: any) => {
         setFirst(event.first);
         setRows(event.rows);
     }
+
     const template = {
         layout: 'RowsPerPageDropdown CurrentPageReport PrevPageLink NextPageLink',
         'RowsPerPageDropdown': (options: any) => {
@@ -52,22 +50,22 @@ export default function TableBasic() {
             )
         }
     };
+
     return (
         <div className="card">
             <DataTable
-                value={options}
+                value={data}
                 tableStyle={{ minWidth: '50rem' }}
                 paginator
                 paginatorTemplate={template}
                 first={first}
                 rows={rows}
                 onPage={onCustomPage}
-                showGridlines 
-               >
+                showGridlines
+            >
                 {columns.map((col, i) => (
-                    <Column  key={col.field} field={col.field} header={col.header} className={col.className} />
+                    <Column key={col.field} field={col.field} header={col.header} className={col.className} />
                 ))}
-
             </DataTable>
         </div>
     );
