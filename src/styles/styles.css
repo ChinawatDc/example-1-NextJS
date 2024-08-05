@@ -63,3 +63,21 @@
 .p-inputotp-input{
    @apply border h-11 px-2 
 }
+
+
+/* editor */
+/* .p-editor-toolbar {
+   display: none;
+} */
+.ck.ck-content {
+   max-height: 350px;
+   height:350px;
+ }
+ 
+ ol {
+   margin-left: 40px;
+ }
+ 
+ul {
+   margin-left: 40px;
+ }

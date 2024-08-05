@@ -8,6 +8,7 @@ export default function Editors({
 }:EditorProps) {
  
      console.log("test",data);
+
      
     return (
         <div className="card">
@@ -15,6 +16,8 @@ export default function Editors({
                 value={data} 
                 onTextChange={(e) => setData(e.htmlValue || '')} 
                 style={{ height: '320px' }} 
+                
+
             />
         </div>
     )
