@@ -13,7 +13,7 @@ const theme = createTheme({
     palette: {
         primary: {
             // main: '#26A2FF',
-            main: '#62513E',
+            main: '#26A2FF',
         },
     },
     typography: {

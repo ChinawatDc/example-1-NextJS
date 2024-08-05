@@ -1,21 +1,8 @@
-
 .globals-layout{
-   @apply flex  min-h-screen  flex-col px-10 sm:px-24 py-6
+   @apply flex min-h-screen flex-col px-10 sm:px-24 py-6
 }
 .globals-padding{
-   @apply px-10 sm:px-24 py-2  
-}
-.bg-globals {
-   background: 
-       linear-gradient(270deg, rgba(79, 59, 38, 0.89) 50.1%, rgba(154, 109, 77, 0.9) 98%),
-       url('/image/hero1 2.png');
-   background-position: bottom;
-   background-repeat: no-repeat;
-   background-size: 100%;
-}
-
-.box-layout-globals{
-  @apply bg-white rounded-md  p-6 text-sugar-1
+   @apply px-10 sm:px-24 py-4  
 }
 
 /* menu navbav */
