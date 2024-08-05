@@ -87,10 +87,15 @@
    height:350px;
  }
  
- ol {
+ .ck-conten ol {
    margin-left: 40px;
  }
  
-ul {
+ .ck-content ul {
    margin-left: 40px;
  }
+
+ .p-paginator {
+   justify-content: flex-end;
+   border-top-width: 1px;
+}

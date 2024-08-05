@@ -2,7 +2,7 @@ import { MenuItem } from "primereact/menuitem";
 
 export const items: MenuItem[] = [
     {
-        label: 'upload',
+        label: 'Upload',
         icon: 'pi pi-fw pi-video',
         url: 'upload'
     },
@@ -12,8 +12,18 @@ export const items: MenuItem[] = [
     },
     {
         label: "Editor",
-        icon: "pi pi-fw pi-table",
+        icon: "pi pi-fw pi-th-large",
         url: "editor",
+    },
+    {
+        label: 'Chart',
+        icon: 'pi pi-fw pi-video',
+        url: 'chart'
+    },
+    {
+        label: "Table",
+        icon: "pi pi-fw pi-table",
+        url: "table",
     },
     {
         label: 'Settings', icon: 'pi pi-fw pi-cog',
