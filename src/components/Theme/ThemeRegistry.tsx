@@ -5,7 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import NextAppDirEmotionCacheProvider from './EmotionCache';
 import theme from './theme';
 import { PrimeReactProvider } from 'primereact/api';
-import Tailwind from 'primereact/passthrough/tailwind';
+
 export default function ThemeRegistry({ children }: { children: React.ReactNode }) {
   return (
     <NextAppDirEmotionCacheProvider options={{ key: 'tailwind' }}>

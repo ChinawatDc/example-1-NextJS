@@ -1,6 +1,5 @@
 import React from 'react';
 import { Tag } from 'primereact/tag';
-import { padding, width } from '@mui/system';
 import { TagStatusProps } from '@/src/models/misc.model';
 
 export default function TagStatus({
@@ -8,7 +7,7 @@ export default function TagStatus({
 }: TagStatusProps) {
 
     const tagStyle = {
-        fontSize: '16px',
+        fontSize: '15px',
         color: 'black',
         fontWeight: 400,
         width: '150px',

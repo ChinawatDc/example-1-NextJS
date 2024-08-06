@@ -26,6 +26,11 @@ export const items: MenuItem[] = [
         url: "table",
     },
     {
+        label: "Step",
+        icon: "pi pi-fw pi-table",
+        url: "step",
+    },
+    {
         label: 'Settings', icon: 'pi pi-fw pi-cog',
         items: [
             [
