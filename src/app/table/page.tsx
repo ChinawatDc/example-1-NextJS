@@ -5,29 +5,55 @@ import { generateMockData, Product } from '@/src/services/api/mockup.serviecs';
 import { ColumnMeta } from "@/src/models/table.model";
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
-import { PrimeReactProvider } from 'primereact/api';
+import TagStatus from '@/src/components/Misc/TagStatus';
+import ConvertDate from '@/src/components/Misc/ConvertDate';
 export default function Page() {
   const [data, setData] = useState<any[]>([]);
   const [totalRecords, setTotalRecords] = useState(0);
   const columns: ColumnMeta<Product>[] = [
-    { field: 'code', header: 'รหัส' },
-    { field: 'name', header: 'ชื่อ', sortable: true },
-    { field: 'category', header: 'ประเภท' },
-    { field: 'quantity', header: 'ปริมาณ' },
+    // { field: 'code', header: 'รหัส' },
+    { field: 'name', header: 'ชื่อโครงการ', sortable: true },
     {
-      field: "action",
-      header: "จัดการ",
+      field: 'quantity', header: '%',
       render: (val, rec) => (
-        <div>
-          <Button
-            onClick={() => console.log("val:", val)}
-          >
-            ทดสอบ
-          </Button>
-        </div>
-
+        <>
+          {val.quantity}%
+        </>
       ),
     },
+    { field: 'nameby', header: 'ผู้สร้างโครงการ' },
+    {
+      field: 'status', header: 'สถานะ', align: 'center',
+      render: (val, rec) => (
+        <TagStatus name={val.status} />
+      ),
+    },
+    {
+      field: 'startdate', header: 'สถานะ', align: 'center',
+      render: (val, rec) => (
+        <ConvertDate date={val.startdate} />
+      ),
+    },
+    {
+      field: 'enddate', header: 'สถานะ', align: 'center',
+      render: (val, rec) => (
+        <ConvertDate date={val.enddate} />
+      ),
+    },
+    // {
+    //   field: "action",
+    //   header: "จัดการ",
+    //   render: (val, rec) => (
+    //     <div>
+    //       <Button
+    //         onClick={() => console.log("val:", val)}
+    //       >
+    //         ดู
+    //       </Button>
+    //     </div>
+
+    //   ),
+    // },
   ];
 
   useEffect(() => {

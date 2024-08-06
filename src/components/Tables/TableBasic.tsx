@@ -1,33 +1,19 @@
 import React, { useRef, useState } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-import { ColumnMeta } from '@/src/models/table.model';
 import { Tooltip } from 'primereact/tooltip';
 import { Button } from 'primereact/button';
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
-import { CSVLink } from 'react-csv';
 import { font } from '../../utils/font';
 import { Toast } from 'primereact/toast';
+import { TableBasicProps } from '@/src/models/table.model';
 declare module 'jspdf' {
     interface jsPDF {
         autoTable: any;
     }
-}
-
-
-interface TableBasicProps {
-    data: any[];
-    columns: ColumnMeta<any>[];
-    total: number;
-    paginator?: boolean;
-    tablename?: string
-    exports?: boolean;
-    selection?: boolean;
-    selectionClick?: boolean;
-    selectionType?: 'radiobutton' | 'checkbox';
 }
 
 export default function TableBasic({
@@ -41,7 +27,6 @@ export default function TableBasic({
     tablename = '',
     columns,
 }: TableBasicProps) {
-
     const dt = useRef<any>(null);
     const toast = useRef<Toast>(null);
     const [first, setFirst] = useState(0);
@@ -193,6 +178,7 @@ export default function TableBasic({
                 <Column
                     body={(rowData, { rowIndex }: { rowIndex: number }) => rowIndex + 1}
                     header="ลำดับ"
+                    align={'center'}
                     style={{ width: '3rem' }}
                 />
                 {columns.map((col) => (
@@ -200,6 +186,7 @@ export default function TableBasic({
                         key={col.field}
                         field={col.field}
                         header={col.header}
+                        align={col.align as 'left' | 'right' | 'center' | null}
                         className={col.className}
                         sortable={col.sortable}
                         body={col.render}

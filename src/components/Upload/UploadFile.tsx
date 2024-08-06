@@ -5,7 +5,7 @@ import { ProgressBar } from 'primereact/progressbar';
 import { Button } from 'primereact/button';
 import { Tooltip } from 'primereact/tooltip';
 import { Tag } from 'primereact/tag';
-import { UploadFileProps } from '@/src/models/FileUpload.model';
+import { UploadFileProps } from '@/src/models/fileUpload.model';
 
 import { Image } from 'primereact/image';
 

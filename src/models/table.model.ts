@@ -9,6 +9,7 @@ export interface ColumnMeta<RecordType = unknown> {
     header: string;
     sortable?: boolean;
     className?: string;
+    align?: string;
     render?: (data: any, options: ColumnBodyOptions) => React.ReactNode;
 }
 
@@ -23,4 +24,16 @@ export interface PaginatorTemplate {
     RowsPerPageDropdown: (options: any) => React.ReactNode;
     CurrentPageReport: (options: any) => React.ReactNode;
     // Add other template keys as needed
+}
+
+export interface TableBasicProps {
+    data: any[];
+    columns: ColumnMeta<any>[];
+    total: number;
+    paginator?: boolean;
+    tablename?: string
+    exports?: boolean;
+    selection?: boolean;
+    selectionClick?: boolean;
+    selectionType?: 'radiobutton' | 'checkbox';
 }

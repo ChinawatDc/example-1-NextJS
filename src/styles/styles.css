@@ -92,3 +92,8 @@
    justify-content: flex-end;
    border-top-width: 1px;
 }
+
+/* paginator */
+.p-paginator .p-paginator-pages .p-paginator-page {
+   border-radius: unset;
+}
