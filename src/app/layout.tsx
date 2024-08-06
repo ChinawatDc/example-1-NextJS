@@ -3,7 +3,6 @@ import "../styles/styles.css";
 import { Prompt } from 'next/font/google';
 import ThemeRegistry from '../components/Theme/ThemeRegistry';
 import Navbar from "../layout/Navbar";
-import Sidebar2 from "../layout/Sidebar2";
 import Sidebar from "../layout/Sidebar";
 import 'primeflex/primeflex.css';                                   // css utility
 import 'primereact/resources/primereact.css';                       // core css

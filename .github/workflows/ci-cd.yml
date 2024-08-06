@@ -1,0 +1,50 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # หรือชื่อ branch ที่ต้องการให้ CI/CD ทำงาน
+  pull_request:
+    branches:
+      - main  # หรือชื่อ branch ที่ต้องการให้ CI/CD ทำงาน
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # เช็คเอาท์โค้ด
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # ติดตั้ง Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # หรือเวอร์ชันที่คุณใช้
+
+      # ติดตั้ง dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # รันการทดสอบ
+      - name: Run tests
+        run: npm test
+
+      # สร้างแอปพลิเคชัน
+      - name: Build
+        run: npm run build
+
+      # สร้าง artifacts สำหรับการปรับใช้
+      - name: Upload production-ready artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: production
+          path: .next
+          
+      # Deploy (ถ้ามี)
+      - name: Deploy to server
+        run: |
+          # คำสั่งสำหรับการปรับใช้
+          # เช่น scp หรือ rsync สำหรับส่งไฟล์ไปยังเซิร์ฟเวอร์
+          scp -r .next user@server:/path/to/deploy
