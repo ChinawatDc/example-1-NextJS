@@ -12,7 +12,6 @@ const prompt = Prompt({
 const theme = createTheme({
     palette: {
         primary: {
-            // main: '#26A2FF',
             main: '#26A2FF',
         },
     },
@@ -33,11 +32,6 @@ const theme = createTheme({
             styleOverrides: {
                 root: {
                     fontWeight: 600,
-                    // borderRadius: 99,
-                    // paddingLeft: '1.3rem',
-                    // paddingRight: '1.3rem',
-                    // paddingTop: '0.5rem',
-                    // paddingBottom: '0.5rem',
                 },
             },
         },
@@ -50,5 +44,6 @@ const theme = createTheme({
         }
     },
 });
+
 
 export default theme;
