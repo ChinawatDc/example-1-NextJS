@@ -1,12 +1,12 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import TableBasic from '@/src/components/Tables/TableBasic';
-import { generateMockData, Product } from '@/src/services/api/mockup.serviecs';
-import { ColumnMeta } from "@/src/models/table.model";
+import TableBasic from '@/components/Tables/TableBasic';
+import { generateMockData, Product } from '@/services/api/mockup.serviecs';
+import { ColumnMeta } from "@/models/table.model";
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
-import TagStatus from '@/src/components/Misc/TagStatus';
-import ConvertDate from '@/src/components/Misc/ConvertDate';
+import TagStatus from '@/components/Misc/TagStatus';
+import ConvertDate from '@/components/Misc/ConvertDate';
 export default function Page() {
   const [data, setData] = useState<any[]>([]);
   const [totalRecords, setTotalRecords] = useState(0);

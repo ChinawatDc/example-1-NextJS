@@ -1,4 +1,4 @@
-import { InputNumberProps } from '@/src/models/input.model';
+import { InputNumberProps } from '@/models/input.model';
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { InputNumber as PrimeInputNumber } from 'primereact/inputnumber';
@@ -46,14 +46,14 @@ export default function InputNumber({
                                 suffix={suffix} // หน่วยนับ หรือ ข้อความที่แสดงต่อท้ายตตัวเลข
                                 maxLength={maxLength}
                                 min={0}
-                                // ถ้าต้องการใช้ปุ่มให้เปิดข้างล่าง
-                                // showButtons  
-                                // buttonLayout="horizontal" // แสดงไอคอน horizontal ซ้ายขาว  vertical ขึ้นลง
-                                // step={1} 
-                                //  incrementButtonIcon="pi pi-plus"  //icon ในการคลิกเพิ่มลง
-                                //  decrementButtonIcon="pi pi-minus"
+                            // ถ้าต้องการใช้ปุ่มให้เปิดข้างล่าง
+                            // showButtons  
+                            // buttonLayout="horizontal" // แสดงไอคอน horizontal ซ้ายขาว  vertical ขึ้นลง
+                            // step={1} 
+                            //  incrementButtonIcon="pi pi-plus"  //icon ในการคลิกเพิ่มลง
+                            //  decrementButtonIcon="pi pi-minus"
                             />
-                           
+
                         </div>
                     );
                 }}

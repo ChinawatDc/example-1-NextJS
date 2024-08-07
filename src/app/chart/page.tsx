@@ -1,6 +1,6 @@
 "use client"
-import BasicDemo from '@/src/components/Chart/Chart';
-import UploadFile from '@/src/components/Upload/UploadFile';
+import BasicDemo from '@/components/Chart/Chart';
+import UploadFile from '@/components/Upload/UploadFile';
 import React, { useState } from 'react';
 
 export default function Chart() {
@@ -10,7 +10,7 @@ export default function Chart() {
             <div>Chart</div>
             <div>
                 <div>
-                    <BasicDemo/>
+                    <BasicDemo />
                 </div>
             </div>
         </>

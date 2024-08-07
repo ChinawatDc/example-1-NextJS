@@ -2,13 +2,13 @@
 import React from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { Button } from 'primereact/button';
-import FloatInput from '@/src/components/Input/FloatInput';
+import FloatInput from '@/components/Input/FloatInput';
 import { Divider } from "primereact/divider";
-import DropdownInput from '@/src/components/Input/DropdownInput ';
-import InputNumber from '@/src/components/Input/InputNumber';
-import CalendarBasic from '@/src/components/Input/CalendarBasic';
-import FloatInputIIcons from '@/src/components/Input/FloatInputIIcons';
-import InputOtps from '@/src/components/Input/InputOtps';
+import DropdownInput from '@/components/Input/DropdownInput ';
+import InputNumber from '@/components/Input/InputNumber';
+import CalendarBasic from '@/components/Input/CalendarBasic';
+import FloatInputIIcons from '@/components/Input/FloatInputIIcons';
+import InputOtps from '@/components/Input/InputOtps';
 
 type FormValues = {
     dropdown: string;
@@ -73,16 +73,16 @@ export default function Page() {
                         label="Name"
                         type="text"
                         rules={{ required: "Name is required." }}
-                     
+
                     />
                     <FloatInputIIcons
                         name="nameIcon"
                         label="Input Icon"
                         type="text"
-                        icon={( <i className="pi pi-user"></i>)}
-                        // IconFields // ถ้าต้องการให้ ไอคคอนอยู่ใน  Fields
+                        icon={(<i className="pi pi-user"></i>)}
+                    // IconFields // ถ้าต้องการให้ ไอคคอนอยู่ใน  Fields
                     />
-                 
+
 
                     <FloatInput
                         name="password"

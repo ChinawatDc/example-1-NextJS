@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Controller, useFormContext } from 'react-hook-form';
 import { Calendar } from 'primereact/calendar';
-import { FloatInputProps } from '@/src/models/input.model';
+import { FloatInputProps } from '@/models/input.model';
 
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
@@ -52,8 +52,8 @@ export default function CalendarBasic({
                 placeholder={placeholder}
                 disabled={disabled}
                 dateFormat="dd/mm/yy"
-                // showTime
-                // hourFormat="24"
+              // showTime
+              // hourFormat="24"
               // showIcon 
               // icon={() => <i className="pi pi-clock" />} //สีพื้นหลัง ตั้งค่่า ที่ class .p-button.p-button-icon-only styles.css
               // showButtonBar

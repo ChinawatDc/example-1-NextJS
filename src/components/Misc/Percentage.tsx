@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import { PercentageProps } from '@/src/models/misc.model';
+import { PercentageProps } from '@/models/misc.model';
 
 export default function Percentage({
     number,

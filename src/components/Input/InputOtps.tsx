@@ -1,7 +1,7 @@
 import React from 'react'
 import { InputOtp } from 'primereact/inputotp';
 import { Controller, useFormContext } from 'react-hook-form';
-import {  InputOtpProps } from '@/src/models/input.model';
+import { InputOtpProps } from '@/models/input.model';
 export default function InputOtps({
     label,
     name,
@@ -25,7 +25,7 @@ export default function InputOtps({
                 name={name}
                 control={control}
                 rules={rules}
-                
+
                 render={({ field, fieldState }) => {
                     const value = field.value === 'number' ? field.value : 0;
 
@@ -41,9 +41,9 @@ export default function InputOtps({
                                 disabled={disabled}
                                 length={length}
                                 min={0}
-                               
+
                             />
-                           
+
                         </div>
                     );
                 }}

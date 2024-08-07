@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import { ConvertDateProps } from '@/src/models/misc.model';
+import { ConvertDateProps } from '@/models/misc.model';
 
 export default function ConvertDate({
     date,

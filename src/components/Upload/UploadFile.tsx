@@ -5,9 +5,9 @@ import { ProgressBar } from 'primereact/progressbar';
 import { Button } from 'primereact/button';
 import { Tooltip } from 'primereact/tooltip';
 import { Tag } from 'primereact/tag';
-import { UploadFileProps } from '../../models/fileUpload.model';
 
 import { Image } from 'primereact/image';
+import { UploadFileProps } from '@/models/fileUpload.model';
 
 export default function UploadFile({
     files = [],

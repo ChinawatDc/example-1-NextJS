@@ -1,7 +1,7 @@
 'use client';
-import EditorCk from '@/src/components/Editors/EditorCk';
-import EditorCustom from '@/src/components/Editors/EditorCustom';
-import Editors from '@/src/components/Editors/Editors'
+import EditorCk from '@/components/Editors/EditorCk';
+import EditorCustom from '@/components/Editors/EditorCustom';
+import Editors from '@/components/Editors/Editors'
 import React, { useState } from 'react'
 // import 'react-quill/dist/quill.snow.css';
 

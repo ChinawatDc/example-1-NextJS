@@ -2,14 +2,14 @@ import React, { useEffect, useRef } from 'react'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import {
     ClassicEditor,
-    Bold, Code, Strikethrough, Subscript, Superscript, 
-    Underline, Essentials, Italic, Mention, Paragraph, 
-    Undo, Font, Image, ImageUpload, AutoLink, Link, Heading, 
-    HtmlEmbed, HorizontalLine, List, Autoformat, ListProperties, 
-    Indent, IndentBlock, Alignment, ImageResizeEditing, ImageResizeHandles ,
-    ImageCaption 
+    Bold, Code, Strikethrough, Subscript, Superscript,
+    Underline, Essentials, Italic, Mention, Paragraph,
+    Undo, Font, Image, ImageUpload, AutoLink, Link, Heading,
+    HtmlEmbed, HorizontalLine, List, Autoformat, ListProperties,
+    Indent, IndentBlock, Alignment, ImageResizeEditing, ImageResizeHandles,
+    ImageCaption
 } from 'ckeditor5';
-import { EditorProps } from '@/src/models/editors.model';
+import { EditorProps } from '@/models/editors.model';
 import 'ckeditor5/ckeditor5.css';
 import 'ckeditor5-premium-features/ckeditor5-premium-features.css';
 
@@ -76,18 +76,18 @@ export default function EditorCk({
                     ]
                 },
                 toolbar: {
-                    items: ['undo', 'redo', '|', 
+                    items: ['undo', 'redo', '|',
                         'bold', 'italic', 'underline', 'strikethrough', 'code', 'subscript', 'superscript', '|'
                         , 'fontSize', 'fontColor', 'fontBackgroundColor', '|',
-                         'imageUpload','link', 'htmlEmbed', 'horizontalLine', 'bulletedList', 'numberedList','|',
-                          'outdent', 'indent', 'alignment','resizeImage'],
+                        'imageUpload', 'link', 'htmlEmbed', 'horizontalLine', 'bulletedList', 'numberedList', '|',
+                        'outdent', 'indent', 'alignment', 'resizeImage'],
                 },
 
                 plugins: [Font, Bold, Code, Strikethrough, Subscript, Superscript, Underline,
-                     Essentials, Italic, Mention, Paragraph, Undo, Image, ImageUpload,
+                    Essentials, Italic, Mention, Paragraph, Undo, Image, ImageUpload,
                     Link, AutoLink, Heading, HtmlEmbed, HorizontalLine, List, Autoformat,
-                     ListProperties, Indent, IndentBlock,  ImageResizeEditing, ImageResizeHandles,
-                    Alignment,ImageCaption 
+                    ListProperties, Indent, IndentBlock, ImageResizeEditing, ImageResizeHandles,
+                    Alignment, ImageCaption
                 ],
 
                 extraPlugins: [MyCustomUploadAdapterPlugin],
@@ -122,9 +122,9 @@ export default function EditorCk({
                             label: '60%'
                         }
                     ]
-                    
+
                 },
-                
+
                 list: {
                     properties: {
 
