@@ -1,9 +1,11 @@
 'use client';
-import EditorCk from '@/components/Editors/EditorCk';
-import EditorCustom from '@/components/Editors/EditorCustom';
-import Editors from '@/components/Editors/Editors'
-import React, { useState } from 'react'
-// import 'react-quill/dist/quill.snow.css';
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
+
+// Dynamic import for client-side only component
+const EditorCk = dynamic(() => import('@/components/Editors/EditorCk'), { ssr: false });
+const EditorCustom = dynamic(() => import('@/components/Editors/EditorCustom'), { ssr: false });
+const Editors = dynamic(() => import('@/components/Editors/Editors'), { ssr: false });
 
 export default function Page() {
   const [text, setText] = useState('');

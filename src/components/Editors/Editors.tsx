@@ -16,8 +16,6 @@ export default function Editors({
                 value={data}
                 onTextChange={(e) => setData(e.htmlValue || '')}
                 style={{ height: '320px' }}
-
-
             />
         </div>
     )
