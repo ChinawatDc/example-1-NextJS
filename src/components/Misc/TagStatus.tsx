@@ -17,7 +17,7 @@ export default function TagStatus({
         lineHeight: '19.36px',
     };
 
-    let severity: 'success' | 'warning' | 'danger' | 'info' | 'secondary' | 'contrast' | 'primary' | undefined;
+    let severity: 'success' | 'warning' | 'danger' | 'info' | undefined;
     let classname = '';
 
     switch (name) {
@@ -33,14 +33,14 @@ export default function TagStatus({
             break;
         case 'รองบประมาณ':
         case 'ยังไม่เริ่มโครงการ':
-            severity = 'secondary';
+            severity = 'info';
             classname = name === 'ยังไม่เริ่มโครงการ' ? 'bg-[#D9D9D9] border border-black' : classname;
             break;
         default:
             severity = 'info';
             break;
     }
-    
+
     return (
         <Tag severity={severity} value={name} style={tagStyle} className={classname}></Tag>
     );
