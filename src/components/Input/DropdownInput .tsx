@@ -1,4 +1,4 @@
-import { DropdownInputProps } from '../../models/input.model';
+import { DropdownInputProps } from '../../types/input.model';
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { Dropdown } from 'primereact/dropdown';

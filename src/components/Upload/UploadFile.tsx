@@ -7,7 +7,7 @@ import { Tooltip } from 'primereact/tooltip';
 import { Tag } from 'primereact/tag';
 
 import { Image } from 'primereact/image';
-import { UploadFileProps } from '../../models/fileUpload.model';
+import { UploadFileProps } from '../../types/fileUpload.model';
 
 export default function UploadFile({
     files = [],

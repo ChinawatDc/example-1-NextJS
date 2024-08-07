@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Editor } from "primereact/editor";
-import { EditorProps } from "../../models/editors.model";
+import { EditorProps } from "../../types/editors.model";
 
 export default function Editors({
     data = [],

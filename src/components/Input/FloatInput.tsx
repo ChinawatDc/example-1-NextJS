@@ -1,4 +1,4 @@
-import { FloatInputProps } from '../../models/input.model';
+import { FloatInputProps } from '../../types/input.model';
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { InputText } from 'primereact/inputtext';

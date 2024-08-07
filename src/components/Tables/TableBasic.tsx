@@ -9,7 +9,7 @@ import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import { font } from '../../utils/font';
 import { Toast } from 'primereact/toast';
-import { TableBasicProps } from '../../models/table.model';
+import { TableBasicProps } from '../../types/table.model';
 declare module 'jspdf' {
     interface jsPDF {
         autoTable: any;

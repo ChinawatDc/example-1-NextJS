@@ -1,7 +1,7 @@
 import React from 'react'
 import { InputOtp } from 'primereact/inputotp';
 import { Controller, useFormContext } from 'react-hook-form';
-import { InputOtpProps } from '../../models/input.model';
+import { InputOtpProps } from '../../types/input.model';
 export default function InputOtps({
     label,
     name,

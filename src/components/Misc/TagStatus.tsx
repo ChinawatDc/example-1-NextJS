@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tag } from 'primereact/tag';
-import { TagStatusProps } from '../../models/misc.model';
+import { TagStatusProps } from '../../types/misc.model';
 
 export default function TagStatus({
     name,
