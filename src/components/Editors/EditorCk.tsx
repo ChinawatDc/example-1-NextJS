@@ -9,7 +9,7 @@ import {
     Indent, IndentBlock, Alignment, ImageResizeEditing, ImageResizeHandles,
     ImageCaption
 } from 'ckeditor5';
-import { EditorProps } from '@/models/editors.model';
+import { EditorProps } from '../../models/editors.model';
 import 'ckeditor5/ckeditor5.css';
 import 'ckeditor5-premium-features/ckeditor5-premium-features.css';
 

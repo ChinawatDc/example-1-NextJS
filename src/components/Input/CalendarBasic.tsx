@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Controller, useFormContext } from 'react-hook-form';
 import { Calendar } from 'primereact/calendar';
-import { FloatInputProps } from '@/models/input.model';
+import { FloatInputProps } from '../../models/input.model';
 
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';

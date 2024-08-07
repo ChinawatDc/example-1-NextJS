@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import TableBasic from '@/components/Tables/TableBasic';
 import { generateMockData, Product } from '@/services/api/mockup.serviecs';
-import { ColumnMeta } from "@/models/table.model";
+import { ColumnMeta } from "../../models/table.model";
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import TagStatus from '@/components/Misc/TagStatus';

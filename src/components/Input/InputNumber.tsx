@@ -1,4 +1,4 @@
-import { InputNumberProps } from '@/models/input.model';
+import { InputNumberProps } from '../../models/input.model';
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { InputNumber as PrimeInputNumber } from 'primereact/inputnumber';

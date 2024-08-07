@@ -1,4 +1,4 @@
-import { ColumnMeta } from "@/models/table.model";
+import { ColumnMeta } from "../../models/table.model";
 
 export const columns: ColumnMeta[] = [
     { field: 'code', header: 'Code' },
