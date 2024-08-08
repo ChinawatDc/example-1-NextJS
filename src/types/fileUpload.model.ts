@@ -6,3 +6,9 @@ export interface UploadFileProps {
   multiple?: boolean;
   maxSize?: number;
 }
+export interface dataProps {
+  itemImageSrc: string;
+  thumbnailImageSrc: string;
+  alt: string;
+  title: string;
+}

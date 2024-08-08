@@ -1,10 +1,10 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-
 import { MegaMenu } from 'primereact/megamenu';
 import { MenuItem } from 'primereact/menuitem';
 import { items } from '../router/menuData';
+
 export default function Sidebar() {
     const [currentPath, setCurrentPath] = useState<string>('/');
 
@@ -22,6 +22,7 @@ export default function Sidebar() {
     }, []);
 
     const isActive = (url?: string) => {
+        // Handle root URL case
         if (url === '/' && (currentPath === '/' || currentPath === '')) {
             return true;
         }
@@ -39,21 +40,23 @@ export default function Sidebar() {
             return {
                 ...item,
                 template: (item: MenuItem) => (
-                    <a href={item.url} className={`pb-3 flex gap-1 items-center hover:bg-white hover:text-[#ff7b00]
-                    ${isActive(item.url) ? 'text-[#ff7b00] ' : ''}`}>
+                    <a href={item.url} className={`px-3 flex gap-1 items-center hover:bg-white hover:text-orange-1 
+                    ${isActive(item.url) ? 'text-orange-1 ' : ''}`}>
                         {item.icon && <i className={item.icon}></i>}
                         {item.label}
                     </a>
-
+                    
                 )
             };
         });
     };
+    
+
     const highlightedItems = highlightActiveMenuItems(items);
 
     return (
         <div>
-            <MegaMenu model={highlightedItems} orientation="vertical" breakpoint="767px" />
+            <MegaMenu model={highlightedItems}  breakpoint="1280px" />
         </div>
     );
 }
