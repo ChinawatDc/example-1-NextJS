@@ -31,7 +31,7 @@ export default function TableBasic({
     const toast = useRef<Toast>(null);
     const [first, setFirst] = useState(0);
     const [selectedProducts, setSelectedProducts] = useState<any[]>([]);
-
+    // const [balanceFrozen, setBalanceFrozen] = useState<boolean>(false);
     const onCustomPage = (event: any) => {
         setFirst(event.first);
     };
@@ -168,18 +168,20 @@ export default function TableBasic({
                 selection={selectedProducts}
                 onSelectionChange={(e: any) => setSelectedProducts(e.value)}
                 tableStyle={{ minWidth: '50rem' }}
+                scrollable
             >
                 {selection && selectionType === 'checkbox' && (
-                    <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}></Column>
+                    <Column selectionMode="multiple" frozen headerStyle={{ width: '3rem' }}></Column>
                 )}
                 {selection && selectionType === 'radiobutton' && (
-                    <Column selectionMode="single" headerStyle={{ width: '3rem' }}></Column>
+                    <Column selectionMode="single" frozen headerStyle={{ width: '3rem' }}></Column>
                 )}
                 <Column
                     body={(rowData, { rowIndex }: { rowIndex: number }) => rowIndex + 1}
                     header="ลำดับ"
                     align={'center'}
                     style={{ width: '3rem' }}
+                    frozen
                 />
                 {columns.map((col) => (
                     <Column
@@ -190,6 +192,9 @@ export default function TableBasic({
                         className={col.className}
                         sortable={col.sortable}
                         body={col.render}
+                        frozen={col.frozen == true ? true : false}
+                        alignFrozen="right"
+                        // style={{ minWidth: '200px' }}
                     />
                 ))}
             </DataTable>

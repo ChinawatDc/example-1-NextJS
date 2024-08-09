@@ -3,20 +3,20 @@ import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { Dropdown } from 'primereact/dropdown';
 
-function DropdownInput({
-    label,
-    name,
-    options,
-    rules,
-    disabled = false,
-    filter = false,
-    EN = false,
-    invalid = false,
-    onSelected,
-    className,
-    onChange: onSelectedChange,
-    placeholder
-}: DropdownInputProps) {
+export default
+    function DropdownInput({
+        label,
+        name,
+        options,
+        rules,
+        disabled = false,
+        filter = false,
+        EN = false,
+        onSelected,
+        className,
+        onChange: onSelectedChange,
+        placeholder
+    }: DropdownInputProps) {
     const { control } = useFormContext();
 
     const handleChange = (e: any) => {
@@ -42,7 +42,7 @@ function DropdownInput({
                 rules={rules}
                 render={({ field, fieldState }) => (
                     <Dropdown
-                        className={`globals-input  ${fieldState.invalid ? 'p-invalid !border-red-600' : ''}`}
+                        className={`globals-input   ${fieldState.invalid ? 'p-invalid !border-red-600' : ''}`}
                         id={name}
                         {...field}
                         options={
@@ -64,5 +64,3 @@ function DropdownInput({
         </div>
     );
 }
-
-export default DropdownInput;

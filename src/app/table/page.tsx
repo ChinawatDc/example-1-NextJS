@@ -12,7 +12,7 @@ export default function Page() {
   const [totalRecords, setTotalRecords] = useState(0);
   const columns: ColumnMeta<Product>[] = [
     // { field: 'code', header: 'รหัส' },
-    { field: 'name', header: 'ชื่อโครงการ', sortable: true },
+    { field: 'name', header: 'ชื่อโครงการ', sortable: true, },
     {
       field: 'quantity', header: '%',
       render: (val, rec) => (
@@ -40,20 +40,21 @@ export default function Page() {
         <ConvertDate date={val.enddate} />
       ),
     },
-    // {
-    //   field: "action",
-    //   header: "จัดการ",
-    //   render: (val, rec) => (
-    //     <div>
-    //       <Button
-    //         onClick={() => console.log("val:", val)}
-    //       >
-    //         ดู
-    //       </Button>
-    //     </div>
+    {
+      field: "action",
+      header: "จัดการ",
+      frozen: true,
+      render: (val, rec) => (
+        <div>
+          <Button
+            onClick={() => console.log("val:", val)}
+          >
+            ดู
+          </Button>
+        </div>
 
-    //   ),
-    // },
+      ),
+    },
   ];
 
   useEffect(() => {

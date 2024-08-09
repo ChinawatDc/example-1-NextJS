@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap');
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
@@ -30,12 +31,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #fff
 }
 
 @layer utilities {
@@ -43,4 +39,3 @@ body {
     text-wrap: balance;
   }
 }
-

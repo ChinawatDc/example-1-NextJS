@@ -9,7 +9,7 @@ import { InputMask } from 'primereact/inputmask';
 import { IconField } from 'primereact/iconfield';
 import { InputIcon } from 'primereact/inputicon';
 
-export default function FloatInputIIcons({
+export default function FloatInputIcons({
     label,
     name,
     className,
@@ -21,7 +21,6 @@ export default function FloatInputIIcons({
     toggleMask,
     header,
     footer,
-    error,
     mask,
     icon,
     IconFields
@@ -73,7 +72,7 @@ export default function FloatInputIIcons({
                                                 placeholder={placeholder}
                                                 disabled={disabled}
                                                 maxLength={maxLength}
-                                                className={`globals-input   ${fieldState.invalid ? 'p-invalid !border-red-600' : ''}`}
+                                                className={`globals-input  ${fieldState.invalid ? 'p-invalid !border-red-600' : ''}`}
                                             />
                                             {/* สีพื้นหลัง ตั้งค่่า ที่ class .p-inputgroup-addon styles.css */}
                                             {icon && <span className="p-inputgroup-addon ">{icon}</span>}

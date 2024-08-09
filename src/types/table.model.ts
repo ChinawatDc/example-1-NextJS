@@ -1,19 +1,20 @@
 import { ColumnBodyOptions } from 'primereact/column';
 
 export interface tableprops {
-   data:any
+    data: any
 }
 
 export interface ColumnMeta<RecordType = unknown> {
     field: string;
     header: string;
     sortable?: boolean;
+    frozen?: boolean;
     className?: string;
     align?: string;
     render?: (data: any, options: ColumnBodyOptions) => React.ReactNode;
 }
 
- export interface PaginatorProps {
+export interface PaginatorProps {
     first: number;
     rows: number;
     totalRecords: number;

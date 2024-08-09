@@ -17,7 +17,6 @@ export default function FloatInput({
     toggleMask,
     header,
     footer,
-    error,
     mask,
 }: FloatInputProps) {
     const { control } = useFormContext();
@@ -61,7 +60,7 @@ export default function FloatInput({
                                     disabled={disabled}
                                     maxLength={maxLength}
                                     rows={5} cols={30}
-                                    className={`border rounded-md p-2 ${fieldState.invalid ? 'p-invalid !border-red-600' : ''}`}
+                                    className={`border rounded-md  ${fieldState.invalid ? 'p-invalid !border-red-600' : ''}`}
                                 />
                             );
                         case 'tel':

@@ -34,12 +34,12 @@ export type FloatInputProps = {
   customSetValueFunction?: (value: string) => void;
   className?: string;
   icon?: React.ReactNode;
-  IconFields?:boolean;
+  IconFields?: boolean;
   autoFocus?: boolean;
   options?: { label: string; key: string }[];
-  toggleMask?: boolean;  
-  header?: React.ReactNode;  
-  footer?: React.ReactNode; 
+  toggleMask?: boolean;
+  header?: React.ReactNode;
+  footer?: React.ReactNode;
 }
 
 export type InputNumberProps = {
@@ -68,6 +68,15 @@ export type InputOtpProps = {
   error?: boolean;
   className?: string;
   autoFocus?: boolean;
-  length:number
+  length: number
+}
+
+export type ColorProps = {
+  label?: string;
+  name: string;
+  rules?: any;
+  format?: "hex" | "rgb" | "hsb";
+  disabled?: boolean;
+  className?: string;
 }
 

@@ -23,10 +23,6 @@ export default function CalendarBasic({
   mask,
 }: FloatInputProps) {
   const { control } = useFormContext();
-
-
-
-
   return (
     <div className={`globals-input-layout ${className}`}>
       {label && (
@@ -44,7 +40,7 @@ export default function CalendarBasic({
           return (
             <div  >
               <Calendar
-                className={` ${fieldState.invalid ? 'p-invalid !border-red-600' : ''}`}
+                className={`h-11 ${fieldState.invalid ? 'p-invalid !border-red-600' : ''}`}
                 id={name}
                 {...field}
                 value={value}
