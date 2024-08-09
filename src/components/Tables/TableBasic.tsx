@@ -194,7 +194,7 @@ export default function TableBasic({
                         body={col.render}
                         frozen={col.frozen == true ? true : false}
                         alignFrozen="right"
-                        // style={{ minWidth: '200px' }}
+                    // style={{ minWidth: '200px' }}
                     />
                 ))}
             </DataTable>

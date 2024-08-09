@@ -22,7 +22,7 @@ export const items: MenuItem[] = [
     },
     {
         label: 'Chart',
-        icon: 'pi pi-fw pi-video',
+        icon: 'pi pi-chart-pie',
         url: 'chart'
     },
     {
@@ -32,17 +32,17 @@ export const items: MenuItem[] = [
     },
     {
         label: "Step",
-        icon: "pi pi-fw pi-table",
+        icon: "pi pi-fw pi-minus",
         url: "step",
     },
     {
         label: "Galleria",
-        icon: "pi pi-fw pi-table",
+        icon: "pi pi-images",
         url: "galleria",
     },
     {
-        label: "colorpicker",
-        icon: "pi pi-fw pi-table",
+        label: "Color Picker",
+        icon: "pi pi-palette",
         url: "colorpicker",
     },
     // {

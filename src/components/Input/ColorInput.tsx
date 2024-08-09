@@ -13,8 +13,7 @@ export default function ColorInput({
 }: ColorProps) {
   const { control, watch, formState } = useFormContext();
 
-  // Determine the inputId based on the format
-  let inputId;
+  let inputId: string;
   switch (format) {
     case 'hex':
       inputId = 'cp-hex';
@@ -26,7 +25,7 @@ export default function ColorInput({
       inputId = 'cp-hsb';
       break;
     default:
-      inputId = 'cp-hex'; // Fallback to 'hex' if format is unknown
+      inputId = 'cp-hex';
   }
 
   return (
