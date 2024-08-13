@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from "react"
 import { TabPanel, TabView } from "primereact/tabview";
 import { getBarBasics, getBarChart } from "@/services/api/api.mockup";
