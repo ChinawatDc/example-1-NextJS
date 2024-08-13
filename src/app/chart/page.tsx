@@ -1,34 +1,34 @@
-"use client";
-import React, { useEffect, useState } from "react";
+'use client'
+import { useEffect, useState } from "react";
 import { TabPanel, TabView } from "primereact/tabview";
-import { getBarBasics, getBarChart } from "@/services/api/api.mockup";
+import { getBarChart, getBarBasics } from "@/services/api/api.mockup";
 import BasicDemo from "@/components/Chart/BasicDemo";
-import ApexChart from "@/components/Chart/ApexChart";
-import ChartBasicBar from "@/components/Chart/ChartBasicBar";
+import dynamic from "next/dynamic";
 
-interface ChartData {
-    series: any[];
-    categories: any[];
-}
+// Dynamically import ApexChart and ChartBasicBar to ensure they're only loaded on the client side
+const ApexChart = dynamic(() => import('@/components/Chart/ApexChart'), { ssr: false });
+const ChartBasicBar = dynamic(() => import('@/components/Chart/ChartBasicBar'), { ssr: false });
 
 function Chart() {
-    const [data, setData] = useState<any[]>([]);
-    const [dataBar, setDataBar] = useState<ChartData | null>(null);
-    const [activeIndex, setActiveIndex] = useState<number>(0);
+    const [data, setData] = useState<any>([]);
+    const [dataBar, setDataBar] = useState<{ series: any[]; categories: any[] } | null>(null);
+    const [activeIndex, setActiveIndex] = useState(0);
 
     const fetchData = async () => {
         try {
-            const [barChartData, barBasicsData] = await Promise.all([getBarChart(), getBarBasics()]);
-            if (barChartData && barBasicsData) {
-                setData(barChartData);
-                setDataBar(barBasicsData);
+            const res = await getBarChart();
+            const resBar = await getBarBasics();
+            if (res && resBar) {
+                console.log("res,", resBar);
+                setDataBar(resBar);
+                setData(res);
             } else {
-                console.error('Fetched data is not valid.');
+                console.error('Fetched data is not an array:');
                 setData([]);
                 setDataBar(null);
             }
         } catch (error) {
-            console.error('Error fetching data:', error);
+            console.error('Error fetching:', error);
             setData([]);
             setDataBar(null);
         }
@@ -38,79 +38,53 @@ function Chart() {
         fetchData();
     }, []);
 
-    const chartComponents: { [key: string]: React.FC<any> } = {
-        BasicDemo: BasicDemo,
-        ApexChart: (props: any) => <ApexChart {...props} />,
-        ChartBasicBar: (props: any) => <ChartBasicBar {...props} />,
-    };
-
-    const renderChart = () => {
-        switch (activeIndex) {
-            case 0:
-                return React.createElement(chartComponents.BasicDemo);
-            case 1:
-                return (
-                    <div className="border p-4 rounded-md">
-                        {data.length ? (
-                            React.createElement(chartComponents.ApexChart, { data, title: "Timeline Charts" })
-                        ) : (
-                            <p>Loading data...</p>
-                        )}
-                    </div>
-                );
-            case 2:
-                return (
-                    <div className="space-y-4">
-                        {/* Horizontal Bar Chart */}
-                        <div className="border p-4 rounded-md">
-                            {dataBar ? (
-                                React.createElement(chartComponents.ChartBasicBar, {
-                                    series: dataBar.series,
-                                    horizontal: true,
-                                    enabled: true,
-                                    categories: dataBar.categories,
-                                    title: "Fiction Books Sales",
-                                    colors: ['#d4526e', '#13d8aa'],
-                                })
-                            ) : (
-                                <p>Loading data...</p>
-                            )}
-                        </div>
-                        {/* Vertical Bar Chart */}
-                        <div className="border p-4 rounded-md">
-                            {dataBar ? (
-                                React.createElement(chartComponents.ChartBasicBar, {
-                                    series: dataBar.series,
-                                    enabled: true,
-                                    categories: dataBar.categories,
-                                    title: "Fiction Books Sales",
-                                    colors: ['#d4526e', '#13d8aa'],
-                                })
-                            ) : (
-                                <p>Loading data...</p>
-                            )}
-                        </div>
-                    </div>
-                );
-            default:
-                return null;
-        }
-    };
+    const colors = ['#d4526e', '#13d8aa'];
 
     return (
-        <>
-            <TabView activeIndex={activeIndex} onTabChange={(e) => setActiveIndex(e.index)}>
-                <TabPanel header="Chart primereact">
-                    {renderChart()}
-                </TabPanel>
-                <TabPanel header="ApexChart Timeline">
-                    {renderChart()}
-                </TabPanel>
-                <TabPanel header="ApexChart BasicBar">
-                    {renderChart()}
-                </TabPanel>
-            </TabView>
-        </>
+        <TabView activeIndex={activeIndex} onTabChange={(e) => setActiveIndex(e.index)}>
+            <TabPanel header="Chart primereact">
+                <BasicDemo />
+            </TabPanel>
+            <TabPanel header="ApexChart Timeline">
+                <div className="border p-4 rounded-md">
+                    <ApexChart data={data} title="Timeline Charts" />
+                </div>
+            </TabPanel>
+            <TabPanel header="ApexChart BasicBar" className="space-y-4">
+                {/* Horizontal */}
+                <div className="border p-4 rounded-md">
+                    {dataBar ? (
+                        <ChartBasicBar
+                            series={dataBar.series}
+                            horizontal
+                            enabled
+                            categories={dataBar.categories}
+                            title="Fiction Books Sales"
+                            colors={colors}
+                        />
+                    ) : (
+                        <p>Loading data...</p>
+                    )}
+                </div>
+                {/* Vertical */}
+                <div className="border p-4 rounded-md">
+                    {dataBar ? (
+                        <ChartBasicBar
+                            series={dataBar.series}
+                            enabled
+                            categories={dataBar.categories}
+                            title="Fiction Books Sales"
+                            colors={colors}
+                        />
+                    ) : (
+                        <p>Loading data...</p>
+                    )}
+                </div>
+            </TabPanel>
+            <TabPanel header="ApexChart Pie Chart">
+                {/* Content for Pie Chart */}
+            </TabPanel>
+        </TabView>
     );
 }
 
