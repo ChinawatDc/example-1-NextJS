@@ -4,27 +4,22 @@ import { useState, useEffect } from "react";
 import moment from "moment";
 
 export default function Home() {
-  const [currentTime, setCurrentTime] = useState(getCurrentTime());
-  const [show, setShow] = useState(false);
+  const [currentTime, setCurrentTime] = useState<string>('');
+  const [show, setShow] = useState<boolean>(false);
 
-  // Function to get the current time
-  function getCurrentTime() {
-    return moment();
-  }
-
-  // Update the time every second
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTime(getCurrentTime());
-    }, 1000); // Update every second
+    const updateTime = () => setCurrentTime(moment().format('HH:mm:ss'));
+    updateTime(); // Initialize the time immediately
+
+    const interval = setInterval(updateTime, 1000); // Update every second
 
     // Cleanup the interval on component unmount
     return () => clearInterval(interval);
   }, []);
 
   // Get the day of the week and format the time
-  const dayOfWeek = currentTime.format('dddd');
-  const timeString = currentTime.format('HH:mm:ss');
+  const dayOfWeek = moment().format('dddd');
+  const timeString = currentTime;
 
   let greeting = '';
   const urlLogo = `/A-Star-Logo.png`;
@@ -46,7 +41,7 @@ export default function Home() {
 
   return (
     <>
-      <div className='ml-5 mr-auto'>
+      <div className='ml-auto mr-auto'>
         <div className='pt-6 md:container md:mx-auto'>
           <Grid container justifyContent="center">
             <Grid item xs={12} sm={12} md={12} lg={12}>

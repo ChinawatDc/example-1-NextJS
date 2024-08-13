@@ -1,10 +1,18 @@
 import React from 'react';
-import { ProgressSpinner } from 'primereact/progressspinner';
-
+import "../styles/loading.css";
 export default function Loading() {
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-            <ProgressSpinner style={{ width: '100px' }} strokeWidth="8" />
+            <div className="dot-spinner">
+                <div className="dot-spinner__dot"></div>
+                <div className="dot-spinner__dot"></div>
+                <div className="dot-spinner__dot"></div>
+                <div className="dot-spinner__dot"></div>
+                <div className="dot-spinner__dot"></div>
+                <div className="dot-spinner__dot"></div>
+                <div className="dot-spinner__dot"></div>
+                <div className="dot-spinner__dot"></div>
+            </div>
         </div>
     );
 }

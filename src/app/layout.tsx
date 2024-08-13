@@ -9,6 +9,7 @@ import 'primereact/resources/primereact.css';                       // core css
 import 'primereact/resources/primereact.min.css';                       // core css
 import "primereact/resources/themes/lara-light-cyan/theme.css";// theme
 import 'primeicons/primeicons.css';
+import Layouts from "@/layout/layouts";
 
 const prompt = Prompt({
   weight: ['300', '400', '500', '700'],
@@ -30,18 +31,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={prompt.className}>
         <ThemeRegistry>
-          <Navbar />
-          <div className="globals-layout">
-            <div className="flex ">
-              <div className="hidden md:block border-e pr-6">
-                <Sidebar />
-              </div>
-              {/* <Sidebar2 /> */}
-              <div className="w-[100vw] md:px-6">
-                {children}
-              </div>
-            </div>
-          </div>
+          <Layouts >
+            {children}
+          </Layouts>
         </ThemeRegistry>
       </body>
     </html>
