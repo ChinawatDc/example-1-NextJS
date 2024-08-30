@@ -28,3 +28,12 @@ export const getBarBasics = async () => {
     throw error;
   }
 };
+export const getentity = async () => {
+  try {
+    const response = await axios.get('http://20.198.241.24:8081/api/entity');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching photos:', error);
+    throw error;
+  }
+};
