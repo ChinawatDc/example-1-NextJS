@@ -89,7 +89,6 @@ export default function TableBasic({
         doc.addFileToVFS("WorkSans-normal.ttf", font);
         doc.addFont("WorkSans-normal.ttf", "WorkSans", "normal");
         doc.setFont("WorkSans");
-
         (doc as any).autoTable({
             head: [exportColumns.map(col => col.title)],
             body: rows.map(row => exportColumns.map(col => row[col.dataKey])),

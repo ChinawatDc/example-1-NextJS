@@ -2,6 +2,7 @@
 import { Grid, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 import moment from "moment";
+import Script from "next/script";
 
 export default function Home() {
   const [currentTime, setCurrentTime] = useState<string>('');
@@ -89,6 +90,7 @@ export default function Home() {
           </Grid>
         </div>
       </div>
+      <Script src="http://pdpa-dpomate.pea.co.th/api/v1/cookies/899ac196-d956-486a-bac5-59f8d0e3052e?lang=th"></Script>
     </>
   );
 }
